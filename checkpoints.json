@@ -1,0 +1,10 @@
+{
+  "paths": [
+    {
+      "path_train_data": "E:/PyCharm/PycharmProjects/SC-Project/Different-Hand-Gesture-Recognition-Using-CNN/Traindata",
+      "path_test_data": "E:/PyCharm/PycharmProjects/SC-Project/Different-Hand-Gesture-Recognition-Using-CNN/Testdata",
+      "path_model": "E:/PyCharm/PycharmProjects/SC-Project/Different-Hand-Gesture-Recognition-Using-CNN/model.h5",
+      "path_dir": "E:/PyCharm/PycharmProjects/SC-Project/Different-Hand-Gesture-Recognition-Using-CNN"
+    }
+  ]
+}
