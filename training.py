@@ -140,4 +140,23 @@ for i in labels:
 
 print(imgs.shape)
 
+# Model accuracy graph
+plt.plot(history2.history['accuracy'])
+plt.plot(history2.history['val_accuracy'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'val'], loc='upper left')
+plt.show()
+
+# Model loss graph
+plt.plot(history2.history['loss'])
+plt.plot(history2.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'val'], loc='upper left')
+plt.show()
+
+
 history2.history
