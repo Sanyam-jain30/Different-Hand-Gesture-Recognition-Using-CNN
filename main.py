@@ -1,12 +1,8 @@
 import os
-import time
-
 import numpy as np
+import mediapipe as mp
 import cv2
 import keras
-import mediapipe as mp
-from keras.preprocessing.image import ImageDataGenerator
-import tensorflow as tf
 import json
 
 file = open('checkpoints.json')
@@ -40,24 +36,19 @@ def cal_accum_avg(frame, accumulated_weight):
     cv2.accumulateWeighted(frame, background, accumulated_weight)
 
 
-def segment_hand(frame, threshold=25):
+def segment_hand(frame, threshold=140):
     global background
 
     diff = cv2.absdiff(background.astype("uint8"), frame)
 
-    _, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)
+    _, thresholded = cv2.threshold(frame, threshold, 255, cv2.THRESH_BINARY_INV)
 
-    # Fetching contours in the frame (These contours can be of hand or any other object in foreground) ...
     contours, hierarchy = cv2.findContours(thresholded.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # If length of contours list = 0, means we didn't get any contours...
     if len(contours) == 0:
-        return None
+        return (thresholded)
     else:
-        # The largest external contour should be the hand 
         hand_segment_max_cont = max(contours, key=cv2.contourArea)
-
-        # Returning the hand segment(max contour) and the thresholded image of hand...
         return (thresholded, hand_segment_max_cont)
 
 
@@ -85,12 +76,17 @@ while True:
                     (0, 0, 255), 2)
 
     else:
-        maxValue = 255
-        thresh = 127
-        retval, thresholded = cv2.threshold(gray_frame, thresh, maxValue, cv2.THRESH_BINARY_INV)
+        # segmenting the hand region
+        hand = segment_hand(gray_frame)
 
-        # Drawing contours around hand segment
-        # cv2.drawContours(frame_copy, [hand_segment + (ROI_right, ROI_top)], -1, (255, 0, 0), 1)
+        if len(hand) == 2:
+            thresholded, hand_segment = hand
+
+            # Drawing contours around hand segment
+            cv2.drawContours(frame_copy, [hand_segment + (ROI_right, ROI_top)], -1, (255, 0, 0), 1)
+
+        else:
+            thresholded = hand
 
         cv2.imshow("Thesholded Hand Image", thresholded)
 
