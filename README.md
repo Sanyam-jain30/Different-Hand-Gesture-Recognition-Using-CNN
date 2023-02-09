@@ -22,9 +22,11 @@ Dataset Specification:
 We are going to use a dataset which contains images of many different types of gesture (namely one finger notation gesture, two finger notation gesture, left notation gesture, etc.) and around 1000 images for each gesture it is the Hand Gesture Recognition Training Dataset. It contains images of gestures at different angles and clarity which helps our model to predict the hand gesture even in less clarity.
 
 Different hand gestures:
+
 ![image](https://user-images.githubusercontent.com/78720027/217811805-94edff47-b089-43c0-a820-6d4fd3da3a05.png)
 
 Results:
+
 ![image](https://user-images.githubusercontent.com/78720027/217812825-400c07f2-66b3-426e-927c-5d3d6f6ea981.png)
 
 ![image](https://user-images.githubusercontent.com/78720027/217812849-df55038c-ef46-4f4e-9941-6508801acbf5.png)
