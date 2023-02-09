@@ -20,3 +20,21 @@ Identification of sign gesture is mainly performed by the following methods:
 
 Dataset Specification:
 We are going to use a dataset which contains images of many different types of gesture (namely one finger notation gesture, two finger notation gesture, left notation gesture, etc.) and around 1000 images for each gesture it is the Hand Gesture Recognition Training Dataset. It contains images of gestures at different angles and clarity which helps our model to predict the hand gesture even in less clarity.
+
+Different hand gestures:
+![image](https://user-images.githubusercontent.com/78720027/217811805-94edff47-b089-43c0-a820-6d4fd3da3a05.png)
+
+Results:
+![image](https://user-images.githubusercontent.com/78720027/217812825-400c07f2-66b3-426e-927c-5d3d6f6ea981.png)
+
+![image](https://user-images.githubusercontent.com/78720027/217812849-df55038c-ef46-4f4e-9941-6508801acbf5.png)
+
+![image](https://user-images.githubusercontent.com/78720027/217812866-f50c9fe1-4963-40e5-abad-16f3b241bf6c.png)
+
+![image](https://user-images.githubusercontent.com/78720027/217812898-e597657a-11b2-4ff5-817a-a998ba82f6e5.png)
+
+![image](https://user-images.githubusercontent.com/78720027/217812909-7886330c-2f14-4de9-8150-fa004cb2e013.png)
+
+![image](https://user-images.githubusercontent.com/78720027/217812917-7407080f-2c05-44b8-a9dc-6449160bcd00.png)
+
+![image](https://user-images.githubusercontent.com/78720027/217812923-1f1f805b-4731-481d-9199-488aa94e7f8a.png)
